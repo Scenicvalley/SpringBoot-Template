@@ -1,0 +1,35 @@
+server:
+  port: 8003
+  servlet:
+    context-path: /template
+spring:
+  jackson:
+    time-zone: GMT+8
+  datasource:
+    url: jdbc:mysql://X.X.X.X:3306/databaseName?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true&tinyInt1isBit=false
+    username: XXX
+    password: XXX
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: X.X.X.X
+    port: 6379
+    client-name: XXX
+    password: XXX
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      max-file-size: 10MB
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+  type-aliases-package: com.example.demo.pojo
+  mapper-locations: classpath:com/example/template/mapper:*.xml
+
+swagger2:
+  enable: true
